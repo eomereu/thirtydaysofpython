@@ -309,8 +309,7 @@ Some List Operations
     As well as pre-defined functions, user-defined functions can also be used with 'key' argument,
       In below code, it simply reverses the string and then evaluates the first letter for sorting, which in conclusion means they are being sorted based on their last letters,
         def reverse_word(word):
-            return word[::-1]
-        
+          return word[::-1]
         words = ['banana', 'pie', 'Washington', 'book']
         sorted(words, key=reverse_word) #['banana', 'pie', 'book', 'Washington']
   14.list.sort()
@@ -324,3 +323,48 @@ Some List Operations
         words = ['banana', 'pie', 'Washington', 'book']
         words.sort(key=lambda x: x[::-1], reverse=True)
         words #['Washington', 'book', 'pie', 'banana']
+
+Dictionaries
+Dictionaries are like lists but they consist of key-value pairs and curly braces around them. We can use both strings and integers as keys in both python 2 and 3 unlike the other languages. We can have lists, tuples or dictionaries inside dictionaries
+  my_dict = {
+    "name": "Omer",
+    "age": 24,
+    "isCool": True,
+    52: "Ordu",
+    my_listing = [1, 2, 3],
+    inner_dict = {
+      "salut": "hello"
+    }
+  }
+
+We can reassign values to the keys,
+  my_dict["isCool"] #True
+  my_dict["isCool"] = False
+  my_dict["isCool"] #False
+
+We can create a new key-value pair,
+  my_dict[66] = "Yozgat"
+
+If I try to a nonexistent key, I get KeyError,
+  my_dict["surname"] #KeyError: 'surname'
+  my_dict[3] #KeyError: 3
+
+Tuples
+Unlike lists and dictionaries, tuples are immutable like strings and so cannot be changed,
+  my_tup = (1, 2, (4, 5), [21, 54])
+
+But lists or dictionaries inside of a tuple can be changed,
+  my_tup[3][1] = 9
+  my_tup #1, 2, (4, 5), [21, 9])
+
+Also however, we can add things to the tuple,
+  my_tup += "append me man"
+  my_tup #(1, 2, (4, 5), [21, 54], "append me man")
+  my_tup += ((9)) #TypeError
+  my_tup += (("9")) #TypeError
+  my_tup += ((9),)
+  my_tup #(1, 2, (4, 5), [21, 54], 9)
+  my_tup += ((9,10))
+  my_tup #(1, 2, (4, 5), [21, 54], 9, 9, 10)
+  my_tup += ((12, 13),)
+  my_tup #(1, 2, (4, 5), [21, 54], 9, 9, 10, (12, 13))
