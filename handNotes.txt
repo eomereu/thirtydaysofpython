@@ -19,3 +19,14 @@
 | -                           | py2to3utility              |
 |_____________________________|____________________________|
 
+- There is no type declaration while creating variables in Python,
+    a = 32
+    b = "python"
+
+- Comments in python are written by square '#' and it doesn't support multi-line commenting.
+
+- String concetenation,
+    "python" + " three" #'python three'
+
+- 2 * 2 #4
+  "ab" * 2 #'abab'
