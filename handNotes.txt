@@ -243,22 +243,84 @@ _______________________________________________________________________________
 Some List Operations
   1. list.append(element)
     Lets us add a new elemet at the end of a list,
-    ex:
-      my_list = [1,2,3,4]
+      my_list = [1, 2, 3, 4, 4]
       my_list.append(5)
-      my_list #[1,2,3,4,5]
+      my_list #[1, 2, 3, 4, 4, 5]
   2. list.pop()
     Lets us remove the last elemet of a list,
-    ex:
       my_list.pop()
-      my_list #[1,2,3,4]
+      my_list #[1, 2, 3, 4, 4]
   3. list.pop(index)
     Lets us remove the element at the given index,
-    ex:
       my_list.pop(1) #2
-      my_list #[1,3,4]
+      my_list #[1, 3, 4, 4]
   4. len(list)
     Gives us the length of the list. It is also usable with strings,
-    ex:
-      len(my_list) #3
+      len(my_list) #4
       len("no string dude") #14
+  5. list.count(element)
+    Returns count of how many times 'element' occurs in list,
+      my_list.count(4) #2
+  6. list.extend(list2)
+    Appends the contents of 'list2' to 'list'. If we type a 'string' instead of 'list2' it will append all single letters one by one to the list,
+      extra = [5, 6, 6, 7]
+      my_list.extend(extra)
+      my_list #[1, 3, 4, 4, 5, 6, 6, 7]
+      my_list.extend("op")
+      my_list #[1, 3, 4, 4, 5, 6, 6, 7, 'o', 'p']
+  7. list.index(element)
+    Returns the lowest index in the list that element appears on,
+      my_list.index(4) #2
+  8. list.insert(index, element)
+    Inserts 'element' into list at offset index,
+      my_list.insert(1, 2)
+      my_list #[1, 2, 3, 4, 4, 5, 6, 6, 7, 'o', 'p',]
+  9. list.remove(element)
+    Removes the element that is on the lowest index from list if multiple. If there is just one from the element it simply removes it,
+      my_list.remove(4)
+      my_list #[1, 2, 3, 4, 5, 6, 6, 7, 'o', 'p']
+      my_list.remove('o')
+      my_list #[1, 2, 3, 4, 5, 6, 6, 7, 'p']
+  10.list.reverse()
+    Reverses the list,
+      my_list.reverse()
+      my_list #['p', 7, 6, 6, 5, 4, 3, 2, 1]
+  11.sorted(list)
+    Returns a sorted version of 'list' regarding the 'key'. Does not alter the original list. It sorts from lowest to highest (from a to z on strings),
+      list_1 = [1, 52, 5, 66, 33, 27]
+      sorted(list_1) #[1, 5, 27, 33, 52, 66]
+      list_2 = ["mehmet", "ali", "zeynep", "kadir"]
+      sorted(list_2) #["ali", "kadir", "mehmet", "zeynep"]
+  12.sorted(list, reverse=True)
+    Returns a reverse-sorted version of 'list' regarding the 'key'. Does not alter the original list. It sorts from highest to lowest (from z to a on strings),
+      sorted(list_1, reverse=True) #[66, 52, 33, 27, 5, 1]
+      sorted(list_2, reverse=True) #["zeynep", "mehmet", "kadir", "ali"]
+  13.sorted(list, key, reverse)
+    Returns a sorted version of 'list' based on the 'key'. On demand reverse property can also be used by setting to True or False. Does not alter the original list.
+    key=len provides a sorting based on the length of the words, from shortest to longest,
+      list_3 = ["mike", "alexandra", "joe"]
+      sorted(list_1, key=len) #["joe", "mike", "alexandra"]
+    key=str.lower Hiddenly converts all strings to lowercase to help to sort it in the correct way, if we don't use this sorted function will sort the words beginning with uppercased and lowercased seperately because it actually sorts them according to their UNICODE values, that's why it will first sort the ones beginning with capitalized letters within theirselves and the ones beginning with lowercased letters within thierselves seperately,
+      names_with_case = ['Harry', 'Suzy', 'al', 'mark']
+      # sorting w/o using 'key=str.lower' property
+      sorted(names_with_case) #['Harry', 'Suzy', 'al', 'mark']
+      # sorting with using 'key=str.lower' property
+      sorted(names_with_case, key=str.lower) #['al', 'Harry', 'mark', 'Suzy']
+    As well as pre-defined functions, user-defined functions can also be used with 'key' argument,
+      In below code, it simply reverses the string and then evaluates the first letter for sorting, which in conclusion means they are being sorted based on their last letters,
+        def reverse_word(word):
+            return word[::-1]
+        
+        words = ['banana', 'pie', 'Washington', 'book']
+        sorted(words, key=reverse_word) #['banana', 'pie', 'book', 'Washington']
+  14.list.sort()
+    Sorts the 'list' from lowest to highest (from a to z on strings). It modifies the original list in place and returns 'None',
+      values_to_sort = [5, 2, 6, 1]
+      values_to_sort.sort()
+      values_to_sort #[1, 2, 5, 6]
+  14.list.sort(key, reverse)
+    All the properties in 'sorted' of 'key' and 'reverse' also apply here... Furthermore here we can mention about anonymous (lambda in python) functions,
+      In below code, it simply reverses the string and then evaluates the first letter for sorting, which in conclusion means they are being sorted based on their last letters but in the reverse order this time unlike the one above,
+        words = ['banana', 'pie', 'Washington', 'book']
+        words.sort(key=lambda x: x[::-1], reverse=True)
+        words #['Washington', 'book', 'pie', 'banana']
