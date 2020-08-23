@@ -385,9 +385,28 @@ Also however, we can add things to the tuple,
 
 Loops
   1.for Loop
-    for i in list:
-      ...
+    This loop doesn't have a classical syntax in python. It can be used to iterate over a sequence of a list, string, tuple, set, array, data frame. for loops cannot be empty, but if you for some reason have a for loop with no content, put in the 'pass' statement to avoid getting an error.
+      for i in "Datacamp":
+        pass
+      for i in list:
+        pass
+
+  1+.range(start, end, step) Function
+    To iterate over a series of items For loops use the range function. It will start from including 'start' and will end on not-including 'end' by going as 'step'. If we just type one input inside the parantheses it means 'end' and will start from including zero. If we input two values, we mean 'start' and 'end'. The range function returns a new list with numbers of that specified range based on the length of the sequence,
+      for i in range(10): #i € [0,10)
+        pass
+      for i in range(1,10,2):
+        print (i) #1\3\5\7\9
+      for i in range(len(sequence)):
+        element = sequence[i]
+        if type(element) == int:
+            sequence[i] = element + 4
+
+  1+.enumerate(list) Function
+    This function can be used with for loop to work with both indexes and values of items in a list,
+      for idx, val in enumerate(ints):
+        print(idx, val)
   
   2.while Loop
     while True:
-      ...
+      pass
