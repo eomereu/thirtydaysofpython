@@ -410,3 +410,40 @@ Loops
   2.while Loop
     while True:
       pass
+
+Conditionals & Conditionals Expressions
+- The example syntaxes of an 'if' condition,
+    a = 52
+    b = 52
+    c = 66
+    if a == b:
+      return True
+    elif c == b:
+      return False
+    else:
+      return None
+    ------------------
+    if a is b:
+      print("true")
+    ------------------
+    if a != b:
+      print("false")
+    ------------------
+    not True #False
+    !True #SyntaxError
+    3**3 == 27 #True
+    ------------------
+  As seen above "is" is the same thing with "==". To oppose something in python we use "not" keyword instead of exclamation mark "!". Also we use "elif" keyword instead of "else if" keyword in python.
+
+- isinstance(val, type)
+    This is a useful function for type checking, it returns True if the val matches the type, False otherwise,
+      isinstance(3, int) #True
+      isinstance(3.0, int) #False
+      isinstance("John", str) #True
+
+- In python there is no "x++" or "x--" instead we use,
+    x += 1
+    x -= 1
+
+- Ternary operator (the short version of if statement),
+    'kid' if age < 18 else 'adult'
