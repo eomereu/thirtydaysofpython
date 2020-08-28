@@ -338,6 +338,11 @@ Some List Operations
         words.sort(key=lambda x: x[::-1], reverse=True)
         words #['Washington', 'book', 'pie', 'banana']
 
+  16.sum(list)
+    Returns the summation of the numbers in a given list,
+      abc = [4,6,3,7]
+      sum(abc) #20
+
 Dictionaries
 Dictionaries are like lists but they consist of key-value pairs and curly braces around them. We can use both strings and integers as keys in both python 2 and 3 unlike the other languages. We can have lists, tuples or dictionaries inside dictionaries
   my_dict = {
@@ -447,3 +452,12 @@ Conditionals & Conditionals Expressions
 
 - Ternary operator (the short version of if statement),
     'kid' if age < 18 else 'adult'
+
+Functions
+Functions let us to execute a bunch of code again and again w/o rewriting them every time,
+  def my_function(int_list):
+    avg = sum(int_list)/len(int_list)
+    # Above if we use Python 2 and we want it to return the actual floating point number
+    #  then we have to type it as following,
+    #  avg = sum(int_list)/(len(int_list)*1.0)
+    return None
