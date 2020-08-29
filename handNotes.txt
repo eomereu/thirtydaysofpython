@@ -24,7 +24,7 @@
 _______________________________________________________________________________
 PEP 8 - Style Guide for Python Code (https://www.python.org/dev/peps/pep-0008/)
 --- INDENTATION ---
-- Use 4 spaces per indentation level. Although PEP 8 recommends to use spaces over tabs, in my opinion, it is more convenient to use tabs for indentation for the sake of not spamming space button every time over and over again. Whichever way is chosen, it must be followed throughout the whole code as Python 3 no more allows a mixed use of tabs and spaces.
+- Use 4 spaces per indentation level. PEP 8 recommends to use spaces over tabs, so to make this happen we can rearrange the function of 'tab' key in any editor we use. Whichever way is chosen, it must be followed throughout the whole code as Python 3 no more allows a mixed use of tabs and spaces. Other than this, using spaces will always keep our code correctly-aligned when we forced to copy & paste our code between different editors.
 
 - Aligned with opening delimiter.
     foo = long_function_name(var_one, var_two,
@@ -454,10 +454,22 @@ Conditionals & Conditionals Expressions
     'kid' if age < 18 else 'adult'
 
 Functions
-Functions let us to execute a bunch of code again and again w/o rewriting them every time,
-  def my_function(int_list):
-    avg = sum(int_list)/len(int_list)
-    # Above if we use Python 2 and we want it to return the actual floating point number
-    #  then we have to type it as following,
-    #  avg = sum(int_list)/(len(int_list)*1.0)
-    return None
+  Functions let us to execute a bunch of code again and again w/o rewriting them every time,
+    def my_function(int_list):
+      avg = sum(int_list)/len(int_list)
+      # Above if we use Python 2 and we want it to return the actual floating point number
+      #  then we have to type it as following,
+      #  avg = sum(int_list)/(len(int_list)*1.0)
+      return None
+
+  Anonymous functions are called as 'lambda' functions in python and its syntax is like following,
+    lambda x: x + 1
+    # We can directly name it like a variable,
+    add_one = lambda x: x + 1
+    add_one(2) #3
+    # Here it directly takes 2 and 3 as arguments and returns the result,
+    (lambda x, y: x + y)(2, 3) #5
+    # An example of a higher order function,
+    high_ord_func = lambda x, func: x + func(x)
+    high_ord_func(2, lambda x: x * x) #6
+    high_ord_func(2, lambda x: x + 3) #7
