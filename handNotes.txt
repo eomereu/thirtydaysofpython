@@ -21,6 +21,8 @@
 | Indent. w both tabs & spcs  | disallows mixing           |
 |_____________________________|____________________________|
 
+Cheat Sheet of the Course:
+https://github.com/codingforentrepreneurs/30-Days-of-Python-3.6/blob/master/PythonCheatSheet.md
 _______________________________________________________________________________
 PEP 8 - Style Guide for Python Code (https://www.python.org/dev/peps/pep-0008/)
 --- INDENTATION ---
@@ -473,3 +475,43 @@ Functions
     high_ord_func = lambda x, func: x + func(x)
     high_ord_func(2, lambda x: x * x) #6
     high_ord_func(2, lambda x: x + 3) #7
+
+String Substitution
+  1. str.format(var="value")
+  This is another way of formatting strings,
+    "This is {var_a} formatted string".format(var_a="variable based")
+  
+  2. str.format("value")
+  Other than working with variable names we can also work with their positionings,
+    text = "This {0} an {1}. An {1} {0} an important thing.".format("is", "argument")
+    text #'This is an argument. An argument is an important thing.'
+
+  3. str %("value")
+  This method is more practical than the format method,
+    a = "%s me %s!" %("Format", "mate")
+    a #'Format me mate!'
+    b = "How to write %%s %s" %("is like this")
+    b #'How to write %s is like this'
+
+  4. "%.xf" %(num)
+  Float substitution is used to show how many decimal place ('x' above) we want to show,
+    t = "8 decimal places: %.8f" %(52)
+    t #'8 decimal places: 52.00000000'
+    f = "Limit the places to 2: %.2f" %(3.146454634736346)
+    f #'Limit the places to 2: 3.14'
+
+  5. datetime
+  Date using and substitution can be used via importing a built in library,
+    import datetime
+    today = datetime.date.today()
+    today #datetime.date(2020, 9, 3)
+    # yyyy, m, d
+    now = datetime.datetime.now()
+    now #datetime.datetime(2020,9, 3, 07, 24, 32, 94518)
+    # yyyy, m, d, hh, mm, ss, ms
+    text = today.strftime('%-m/%-d/%y')
+    print(text) #9/3/20
+    # m/d/yy
+
+- str(var)
+    Changes type of 'var' to string
