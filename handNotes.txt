@@ -512,6 +512,12 @@ String Substitution
     text = today.strftime('%-m/%-d/%y')
     print(text) #9/3/20
     # m/d/yy
+  We can also format our date like the following,
+    today.strftime('%d/%m/%Y') #04/09/2020
 
 - str(var)
     Changes type of 'var' to string
+
+- string.capitalize()
+    We can capitalize strings with the method above,
+      "ali".capitalize() #'Ali'
