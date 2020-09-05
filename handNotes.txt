@@ -521,3 +521,48 @@ String Substitution
 - string.capitalize()
     We can capitalize strings with the method above,
       "ali".capitalize() #'Ali'
+
+Classes
+Classes are like a generalization of a kind like animals or mammals etc. We create objects/instances of that class,
+  class Dog:
+    name = "Jon"
+    color = "brown"
+
+Although it can be defined w/o parantheses we may prefer using them for a better and generalized use. While creating an object from a class we must use parantheses after the class name during the assignment. Because it only creates a sample object from that class when we use parantheses, otherwise we cannot create an object,
+  class Dog():
+    name = "Jon"
+    color = "brown"
+  Dog #<class '__main__.Dog'>
+  # Above line doesn't create any objects
+  Dog() #<__main__.Dog object at 0x1015e8278>
+  # Above line created an object of that class
+  instance = Dog() #Used parantheses as mentioned above
+  obj = Dog()
+  object = Dog()
+  # We see the 3 lines above widely in 'django'
+  obj.name = "Snow"
+  obj.name #'Snow'
+  object.name #'Jon'
+
+To define a method inside of an object with keyword 'self',
+  class Dog():
+    name = "Jon"
+    color = "brown"
+    def get_color(self):
+      return self.color
+  obj = Dog()
+  obj == self #True
+  obj.get_color() #'brown'
+Actually here 'self' mean the object itself which we created, so there is no need to pass an argument when we call that method. Furthermore to access attributes/features of a created object from a specific class we build up these methods and while using we must include 'self' keyword to be able to access features.
+
+Classes - Inheritence
+In order to inherit from a class we should write the name of the inherited class inside of the parantheses our inheriting class,
+  class Animal():
+    can_think = False
+    name = "Anything"
+    noise = "Grunt"
+    def make_noise(self):
+      return self.noise
+  class Dog(Animal):
+    name = "John Doe"
+    noise = "Woof!"

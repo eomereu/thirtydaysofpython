@@ -24,7 +24,7 @@ def format_messages(names, amounts):
                 amount = "%.2f" %(amounts[idx])
             ))
     else:
-        return "Error"
+        return ["Error"]
     return messages
 
 # Main function
