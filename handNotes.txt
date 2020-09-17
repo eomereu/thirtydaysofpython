@@ -611,3 +611,17 @@ In order to inherit from a class we should write the name of the inherited class
     <property object at 0x7f1bb9b81b30>
 
 The reason we turned messaging function into a class, we can now keep store of user details inside of the atr of the object. Furthermore we can now manipulate/change/add/set the data more dynamically and more safely compared to the version with functions and two simple lists. So from that time on, I can just simply import that class in my file and play with it, rather than openin the file itself and hardcoding it every single time! (01_String_Substitution_Exercise vs 02_Classes_Exercise)
+
+Classes - Import
+  1.To import a python module from the same directory we simply do the following,
+    from My_Python_Module import ClassName, function_name
+    ...
+
+  2.To import a python module from another folder/directory we first need to create a file named as '__init__.py' inside of that folder for python to be able to recognize that folder as a python module and grants us access to the modules inside of that folder/directory. Otherwise we get an error. Btw '__init__.py' may be blank,
+    from Python_Modules.My_Python_Module_1 import ClassName function_name
+    from Python_Modules.My_Python_Module_2 import AnotherClassName another_function_name
+    ...
+  So here 'Python_Modules' is a folder and its consists following items inside,
+    __init__.py
+    My_Python_Module_1.py
+    My_Python_Module_2.py
