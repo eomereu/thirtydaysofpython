@@ -589,7 +589,7 @@ In order to inherit from a class we should write the name of the inherited class
 
   Property
   Actually property is a method inside of a class. But it differs in the way that its calling style. We have to call the non-property methods with paratheses at the end but if we don't want to use parantheses while calling then we can define that function (method) as a property. However if we call the property methods with using parantheses then we get TypeError. To define property we simply add '@property' on the line above,
-    class dog():
+    class Dog():
       name = "name"
       def bark(self):
         print("Woof!")
@@ -609,3 +609,5 @@ In order to inherit from a class we should write the name of the inherited class
     <function dog.bark at 0x7f1bb9b7f790>
     >>> dog.make_noise
     <property object at 0x7f1bb9b81b30>
+
+The reason we turned messaging function into a class, we can now keep store of user details inside of the atr of the object. Furthermore we can now manipulate/change/add/set the data more dynamically and more safely compared to the version with functions and two simple lists. So from that time on, I can just simply import that class in my file and play with it, rather than openin the file itself and hardcoding it every single time! (01_String_Substitution_Exercise vs 02_Classes_Exercise)
