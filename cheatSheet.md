@@ -1,17 +1,27 @@
 ## The Holy Python Cheat Sheet
-
-### Differences Between Python 2 & Python 3
-|Python 2 |Python 3 |
-|--- |--- |
-|print "NoNeedBrackets" |print("BracketsRequired") |
-|print "ASCII"<br>print u"ThisIsUnicode" |print("AlwaysUnicode")<br>print("AlwaysUnicode") |
-|int/int = int (5/2=2) |int/int =~ float (5/2=2.5) |
-|raw_input() reads string |raw_input() not available |
-|input() evaluates data read |input() reads string |
-|generator.next() |next(generator) |
-|Indent. w both tabs & spcs |disallows mixing |
-|- |py2to3utility |
-***
+Contents:
+1. [Thirty Days Of Python - Udemy Course Notes](https://github.com/eomereu/thirtydaysofpython/blob/master/cheatSheet.md#thirty-days-of-python)
+   1. [Lists](https://github.com/eomereu/thirtydaysofpython/blob/master/cheatSheet.md#lists)
+   1. [Dictionaries](https://github.com/eomereu/thirtydaysofpython/blob/master/cheatSheet.md#dictionaries)
+   1. [Tuples](https://github.com/eomereu/thirtydaysofpython/blob/master/cheatSheet.md#tuples)
+   1. [Loops](https://github.com/eomereu/thirtydaysofpython/blob/master/cheatSheet.md#loops)
+   1. [Conditionals & Conditional Expressions](https://github.com/eomereu/thirtydaysofpython/blob/master/cheatSheet.md#conditionals--conditionals-expressions)
+   1. [Functions](https://github.com/eomereu/thirtydaysofpython/blob/master/cheatSheet.md#functions)
+   1. [String Substitution](https://github.com/eomereu/thirtydaysofpython/blob/master/cheatSheet.md#string-substitution)
+   1. [Classes](https://github.com/eomereu/thirtydaysofpython/blob/master/cheatSheet.md#classes)
+   1. [Ineritence](https://github.com/eomereu/thirtydaysofpython/blob/master/cheatSheet.md#inheritence)
+   1. [Import](https://github.com/eomereu/thirtydaysofpython/blob/master/cheatSheet.md#import)
+1. [Differences Between Python2 & Python3](https://github.com/eomereu/thirtydaysofpython/blob/master/cheatSheet.md#differences-between-python2--python3)
+1. [PEP 8 - Style Guide for Python Code](https://github.com/eomereu/thirtydaysofpython/blob/master/cheatSheet.md#pep-8---style-guide-for-python-code)
+   1. [Indentation](https://github.com/eomereu/thirtydaysofpython/blob/master/cheatSheet.md#indentation)
+   1. [Maximum Line Length](https://github.com/eomereu/thirtydaysofpython/blob/master/cheatSheet.md#maximum-line-length)
+   1. [Line Break](https://github.com/eomereu/thirtydaysofpython/blob/master/cheatSheet.md#line-break)
+   1. [Imports](https://github.com/eomereu/thirtydaysofpython/blob/master/cheatSheet.md#imports)
+   1. [Whitespaces](https://github.com/eomereu/thirtydaysofpython/blob/master/cheatSheet.md#whitespaces)
+   1. [More Recommendations on Whitespaces](https://github.com/eomereu/thirtydaysofpython/blob/master/cheatSheet.md#more-recommendations-on-whitespaces)
+   1. [Comments](https://github.com/eomereu/thirtydaysofpython/blob/master/cheatSheet.md#comments)
+   1. [Documentation Strings](https://github.com/eomereu/thirtydaysofpython/blob/master/cheatSheet.md#documentation-strings)
+   1. [Naming Conventions](https://github.com/eomereu/thirtydaysofpython/blob/master/cheatSheet.md#naming-conventions)
 ***
 
 ## [Thirty Days Of Python](https://github.com/codingforentrepreneurs/30-Days-of-Python-3.6/blob/master/PythonCheatSheet.md)
@@ -52,7 +62,8 @@ my_list = ["good job", "nice", "well done"]
 IndexError: list index out of range
 ```
 ***
-### Some List Operations
+
+### Lists
 1. `list.append(element)`  
     Adds a new elemet at the end of a list,
 ```python
@@ -205,6 +216,7 @@ def reverse_word(word):
 20
 ```
 ***
+
 ### Dictionaries
 Dictionaries are like lists but they consist of key-value pairs and curly braces around them. We can use both strings and integers as keys in both python 2 and 3 unlike the other languages. We can have lists, tuples or dictionaries inside dictionaries
 ```python
@@ -237,6 +249,7 @@ my_dict["surname"] #KeyError: 'surname'
 my_dict[3] #KeyError: 3
 ```
 ***
+
 ### Tuples
 Unlike lists and dictionaries, tuples are immutable like strings and so cannot be changed,
 ```python
@@ -267,6 +280,7 @@ TypeError
 (1, 2, (4, 5), [21, 54], 9, 9, 10, (12, 13))
 ```
 ***
+
 ### Loops
 1. `for`  
     This loop doesn't have a classical syntax in python. It can be used to iterate over a sequence of a list, string, tuple, set, array, data frame. for loops cannot be empty, but if you for some reason have a for loop with no content, put in the `pass` statement to avoid getting an error.
@@ -301,7 +315,8 @@ while True:
     pass
 ```
 ***
-### Conditionals & Conditionals Expressions
+
+### Conditionals & Conditional Expressions
 - The example syntaxes of an `if` condition,
 ```python
 a = 52
@@ -349,6 +364,7 @@ x -= 1
 you_are = "kid" if age < 18 else "adult"
 ```
 ***
+
 ### Functions
   Functions let us to execute a bunch of code again and again w/o rewriting them every time,
 ```python
@@ -402,21 +418,22 @@ lambda x: x + 1
 7
 ```
 ***
+
 ### String Substitution
-1. `str.format(var="value")`  
-  This is another way of formatting strings,
+- `str.format(var="value")`  
+This is another way of formatting strings,
 ```python
 "This is {var_a} formatted string".format(var_a="variable based")
 ```  
-2. `str.format("value")`  
-  Other than working with variable names we can also work with their positionings,
+- `str.format("value")`  
+Other than working with variable names we can also work with their positionings,
 ```python
 >>> text = "This {0} an {1}. An {1} {0} an important thing.".format("is", "argument")
 >>> text
 'This is an argument. An argument is an important thing.'
 ```
-  3. `str %("value")`  
-  This method is more practical than the format method,
+- `str %("value")`  
+This method is more practical than the format method,
 ```python
 >>> a = "%s me %s!" %("Format", "mate")
 >>> a
@@ -425,8 +442,8 @@ lambda x: x + 1
 >>> b
 'How to write %s is like this'
 ```
-  4. `"%.xf" %(num)`  
-  Float substitution is used to show how many decimal place ('x' above) we want to show,
+- `"%.xf" %(num)`  
+Float substitution is used to show how many decimal place ('x' above) we want to show,
 ```python
 >>> t = "8 decimal places: %.8f" %(52)
 >>> t
@@ -435,8 +452,8 @@ lambda x: x + 1
 >>> f
 'Limit the places to 2: 3.14'
 ```
-  5. `datetime`  
-  Date using and substitution can be used via importing a built in library,
+- `datetime`  
+Date using and substitution can be used via importing a built in library,
 ```python
 import datetime
 today = datetime.date.today()
@@ -455,20 +472,23 @@ datetime.datetime(2020,9, 3, 07, 24, 32, 94518)
 >>> print(text)
 9/3/20
 ```
-  We can also format our date like the following,
+We can also format our date like the following,
 ```python    
 today.strftime('%d/%m/%Y') #04/09/2020
 ```
 
 - `str(var)`  
-    Changes type of 'var' to string
+Changes type of 'var' to string
 
 - `string.capitalize()`  
 We can capitalize strings with this method,
 ```python
-"ali".capitalize() #'Ali'
+>>> "ali".capitalize()
+'Ali'
 ```
-Classes
+***
+
+### Classes
 Classes are like a generalization of a kind like animals or mammals etc. We create objects/instances of that class,
 ```python
 class Dog:
@@ -480,19 +500,26 @@ Although it can be defined w/o parantheses we may prefer using them for a better
 class Dog():
     name = "Jon"
     color = "brown"
-Dog #<class '__main__.Dog'>
-# Above line doesn't create any objects
-Dog() #<__main__.Dog object at 0x1015e8278>
-# Above line created an object of that class
-instance = Dog() #Used parantheses as mentioned above
-obj = Dog()
-object = Dog()
+
+# The line below doesn't create any objects
+>>> Dog
+<class '__main__.Dog'>
+>>> Dog()
+<__main__.Dog object at 0x1015e8278>
+
+# The line below creates an object of that class
+# Used parantheses as mentioned above
+>>> instance = Dog()
+>>> obj = Dog()
+>>> object = Dog()
 # We see the 3 lines above widely in 'django'
-obj.name = "Snow"
-obj.name #'Snow'
-object.name #'Jon'
+>>> obj.name = "Snow"
+>>> obj.name
+'Snow'
+>>> object.name
+'Jon'
 ```
-To define a method inside of an object with keyword 'self',
+To define a method inside of an object with keyword `self`,
 ```python
 class Dog():
     name = "Jon"
@@ -501,15 +528,20 @@ def get_color(self):
     return self.color
 def say(self, what):
     return("Woof " + what + "!")
-obj = Dog()
-obj == self #True
-obj.get_color() #'brown'
-obj.say("Hello") #Woof Hello!
-```
-Actually here 'self' mean the object itself which we created, so there is no need to pass an argument when we call that method. Furthermore to access attributes/features of a created object from a specific class we build up these methods and while using we must include 'self' keyword to be able to access features.
-"Self is recurring to the instance that we create an object of a class!"
 
-Classes - Inheritence
+>>> obj = Dog()
+>>> obj == self
+True
+>>> obj.get_color()
+'brown'
+>>> obj.say("Hello")
+Woof Hello!
+```
+Actually here `self` mean the object itself which we created, so there is no need to pass an argument when we call that method. Furthermore to access attributes/features of a created object from a specific class we build up these methods and while using we must include `self` keyword to be able to access features.
+>`Self` is recurring to the instance that we create an object of a class!
+***
+
+### Inheritence
 In order to inherit from a class we should write the name of the inherited class inside of the parantheses our inheriting class,
 ```python
 class Animal():
@@ -522,9 +554,10 @@ class Dog(Animal):
     name = "John Doe"
     noise = "Woof!"
 ```
-  Property
-  Actually property is a method inside of a class. But it differs in the way that its calling style. We have to call the non-property methods with paratheses at the end but if we don't want to use parantheses while calling then we can define that function (method) as a property. However if we call the property methods with using parantheses then we get TypeError. To define property we simply add '@property' on the line above,
-  ```python
+  
+- Property `@property`  
+  Actually property is a method inside of a class. But it differs in the way that its calling style. We have to call the non-property methods with paratheses at the end but if we don't want to use parantheses while calling then we can define that function *(method)* as a property. However if we call the property methods with using parantheses then we get `TypeError`. To define property we simply add `@property` on the line above:
+```python
 class Dog():
     name = "name"
     def bark(self):
@@ -540,33 +573,33 @@ class Dog():
 <bound method dog.bark of <__main__.ani object at 0x7f1bb9bffbb0>>
 >>> jon.noise()
 Auuuu! \n Traceback... TypeError: 'NoneType' object is not callable
+
 # More other cases:
 >>> dog.bark
 <function dog.bark at 0x7f1bb9b7f790>
 >>> dog.make_noise
 <property object at 0x7f1bb9b81b30>
 ```
-The reason we turned messaging function into a class, we can now keep store of user details inside of the atr of the object. Furthermore we can now manipulate/change/add/set the data more dynamically and more safely compared to the version with functions and two simple lists. So from that time on, I can just simply import that class in my file and play with it, rather than openin the file itself and hardcoding it every single time! (01_String_Substitution_Exercise vs 02_Classes_Exercise)
+The reason we turned messaging function into a class, we can now keep store of user details inside of the atr of the object. Furthermore we can now manipulate/change/add/set the data more dynamically and more safely compared to the version with functions and two simple lists. So from that time on, I can just simply import that class in my file and play with it, rather than openin the file itself and hardcoding it every single time! *(01_String_Substitution_Exercise vs 02_Classes_Exercise)*
+***
 
-Classes - Import
-  1.To import a python module from the same directory we simply do the following,
+### Import
+1. To import a python module from the same directory we simply do the following,
 ```python
 from My_Python_Module import ClassName, function_name
 ```
-  2.To import a python module from another folder/directory we first need to create a file named as '__init__.py' inside of that folder for python to be able to recognize that folder as a python module and grants us access to the modules inside of that folder/directory. Otherwise we get an error. Btw '__init__.py' may be blank,
+2. To import a python module from another folder/directory we first need to create a file named as `__init__.py` inside of that folder for python to be able to recognize that folder as a python module and grants us access to the modules inside of that folder/directory. Otherwise we get an error. Btw `__init__.py` may be blank:
 ```python
 from Python_Modules.My_Python_Module_1 import ClassName function_name
 from Python_Modules.My_Python_Module_2 import AnotherClassName another_function_name
 ```
-  So here 'Python_Modules' is a folder and its consists following items inside,
+So here *Python_Modules* is a folder and its consists following items inside,
 ```python
 __init__.py
 My_Python_Module_1.py
 My_Python_Module_2.py
 ```
-
-
-
+***
 
 
 
@@ -586,41 +619,49 @@ My_Python_Module_2.py
 
 
 ***
+***
+
+### Differences Between Python2 & Python3
+|Python 2 |Python 3 |
+|--- |--- |
+|print "NoNeedBrackets" |print("BracketsRequired") |
+|print "ASCII"<br>print u"ThisIsUnicode" |print("AlwaysUnicode")<br>print("AlwaysUnicode") |
+|int/int = int (5/2=2) |int/int =~ float (5/2=2.5) |
+|raw_input() reads string |raw_input() not available |
+|input() evaluates data read |input() reads string |
+|generator.next() |next(generator) |
+|Indent. w both tabs & spcs |disallows mixing |
+|- |py2to3utility |
 ***
 ***
 
 
 ## [PEP 8 - Style Guide for Python Code](https://www.python.org/dev/peps/pep-0008/)
 ### Indentation
-- Use 4 spaces per indentation level. PEP 8 recommends to use spaces over tabs, so to make this happen we can rearrange the function of 'tab' key in any editor we use. Whichever way is chosen, it must be followed throughout the whole code as Python 3 no more allows a mixed use of tabs and spaces. Other than this, using spaces will always keep our code correctly-aligned when we forced to copy & paste our code between different editors.
+Use 4 spaces per indentation level. PEP 8 recommends to use spaces over tabs, so to make this happen we can rearrange the function of *tab* key in any editor we use. Whichever way is chosen, it must be followed throughout the whole code as Python 3 no more allows a mixed use of tabs and spaces. Other than this, using spaces will always keep our code correctly-aligned when we forced to copy & paste our code between different editors.
 
-- Aligned with opening delimiter:
+Aligned with opening delimiter:
 ```python
 foo = long_function_name(var_one, var_two,
                         var_three, var_four)
 
 ```
 
-- Add 4 spaces (an extra level of indentation) to distinguish arguments from the rest:
+Add 4 spaces (an extra level of indentation) to distinguish arguments from the rest:
 ```python
 def long_function_name(
         var_one, var_two, var_three,
         var_four):
     print(var_one)
 ```
-- Hanging indents should add a level:
+Hanging indents should add a level:
 ```python
 foo = long_function_name(
     var_one, var_two,
     var_three, var_four)
 ```
 
-***
-***
-***
-
-
-- The closing brace/bracket/parenthesis on multiline constructs may either line up under the first non-whitespace character of the last line of list, as in:
+The closing brace/bracket/parenthesis on multiline constructs may either line up under the first non-whitespace character of the last line of list, as in:
 ```python
 my_list = [
     1, 2, 3,
@@ -628,23 +669,26 @@ my_list = [
     ]
 ```
 
-- or it may be lined up under the first character of the line that starts the multiline construct, as in:
+or it may be lined up under the first character of the line that starts the multiline construct, as in:
 ```python
-    my_list = [
-        1, 2, 3,
-        4, 5, 6,
-    ]
+my_list = [
+    1, 2, 3,
+    4, 5, 6,
+]
+```
+***
 
---- MAXIMUM LINE LENGTH ---
-- Limit all lines to a maximum of 79 characters. For flowing long blocks of text with fewer structural restrictions (docstrings or comments), the line length should be limited to 72 characters. Backslashes may still be appropriate at times. For example, long, multiple with-statements cannot use implicit continuation, so "backslashes" are acceptable:
-    with open('/path/to/some/file/you/want/to/read') as file_1, \
-        open('/path/to/some/file/being/written', 'w') as file_2:
-        file_2.write(file_1.read())
+### Maximum Line Length
+Limit all lines to a maximum of 79 characters. For flowing long blocks of text with fewer structural restrictions (docstrings or comments), the line length should be limited to 72 characters. Backslashes may still be appropriate at times. For example, long, multiple with-statements cannot use implicit continuation, so "backslashes" are acceptable:
+```python
+with open('/path/to/some/file/you/want/to/read') as file_1, \
+    open('/path/to/some/file/being/written', 'w') as file_2:
+    file_2.write(file_1.read())
+```
+***
 
 ### Line Break
-- Following the tradition from mathematics usually results in more readable code:
-
-- easy to match operators with operands
+Following the tradition from mathematics usually results in more readable code... Easy to match operators with operands:
 ```python
 income = (gross_wages
             + taxable_interest
@@ -652,6 +696,7 @@ income = (gross_wages
             - ira_deduction
             - student_loan_interest)
 ```
+***
 
 ### Imports
 Imports should usually be on separate lines:
@@ -659,23 +704,24 @@ Imports should usually be on separate lines:
 import os
 import sys
 ```
+***
 
---- WHITESPACES ---
-- Avoid extraneous whitespace in the following situations:
+### Whitespaces
+Avoid extraneous whitespace in the following situations.
 
-- Immediately inside parentheses, brackets or braces:
+Immediately inside parentheses, brackets or braces:
 ```python
 spam(ham[1], {eggs: 2})
 ```
-- Between a trailing comma and a following close parenthesis:
+Between a trailing comma and a following close parenthesis:
 ```python
 foo = (0,)
 ```
-- Immediately before a comma, semicolon, or colon:
+Immediately before a comma, semicolon, or colon:
 ```python
 if x == 4: print x, y; x, y = y, x
 ```
-- However, in a slice the colon acts like a binary operator, and should have equal amounts on either side (treating it as the operator with the lowest priority). In an extended slice, both colons must have the same amount of spacing applied. Exception: when a slice parameter is omitted, the space is omitted:
+However, in a slice the colon acts like a binary operator, and should have equal amounts on either side (treating it as the operator with the lowest priority). In an extended slice, both colons must have the same amount of spacing applied. Exception: when a slice parameter is omitted, the space is omitted:
 ```python
 ham[1:9], ham[1:9:3], ham[:9:3], ham[1::3], ham[1:9:]
 ham[lower:upper], ham[lower:upper:], ham[lower::step]
@@ -683,24 +729,26 @@ ham[lower+offset : upper+offset]
 ham[: upper_fn(x) : step_fn(x)], ham[:: step_fn(x)]
 ham[lower + offset : upper + offset]
 ```
-- Immediately before the open parenthesis that starts the argument list of a function call:
+Immediately before the open parenthesis that starts the argument list of a function call:
 ```python
 spam(1)
 ```
-- Immediately before the open parenthesis that starts an indexing or slicing:
+Immediately before the open parenthesis that starts an indexing or slicing:
 ```python
 dct['key'] = lst[index]
 ```
-- More than one space around an assignment (or other) operator to align it with another:
+More than one space around an assignment (or other) operator to align it with another:
 ```python
 x = 1
 y = 2
 long_variable = 3
 ```
---- OTHER RECOMMENDETATIONS ON WHITESPACING ---
-- Always surround these binary operators with a single space on either side: assignment (=), augmented assignment (+=, -= etc.), comparisons (==, <, >, !=, <>, <=, >=, in, not in, is, is not), Booleans (and, or, not).
+***
 
-- If operators with different priorities are used, consider adding whitespace around the operators with the lowest priority(ies). Use your own judgment; however, never use more than one space, and always have the same amount of whitespace on both sides of a binary operator:
+### More Recommendations on Whitespaces
+Always surround these binary operators with a single space on either side: assignment (=), augmented assignment (+=, -= etc.), comparisons (==, <, >, !=, <>, <=, >=, in, not in, is, is not), Booleans (and, or, not).
+
+If operators with different priorities are used, consider adding whitespace around the operators with the lowest priority(ies). Use your own judgment; however, never use more than one space, and always have the same amount of whitespace on both sides of a binary operator:
 ```python
 i = i + 1
 submitted += 1
@@ -708,69 +756,76 @@ x = x*2 - 1
 hypot2 = x*x + y*y
 c = (a+b) * (a-b)
 ```
-- Don't use spaces around the = sign when used to indicate a keyword argument, or when used to indicate a default value for an unannotated function parameter:
+Don't use spaces around the = sign when used to indicate a keyword argument, or when used to indicate a default value for an unannotated function parameter:
 ```python
 def complex(real, imag=0.0):
     return magic(r=real, i=imag)
 ```
-- When combining an argument annotation with a default value, however, do use spaces around the = sign:
+When combining an argument annotation with a default value, however, do use spaces around the = sign:
 ```python
 def munge(sep: AnyStr = None): ...
 def munge(input: AnyStr, sep: AnyStr = None, limit=1000): ...
 ```
---- COMMENTS ---
-- Comments in python are written by square '#' and it doesn't support multi-line commenting. After the square '#' always leave one space. (I indently don't put a space after square when I use inline comments.)
+***
 
-- Inline comments are unnecessary and in fact distracting if they state the obvious. 
+### Comments
+Comments in python are written by square `#` and it doesn't support multi-line commenting. After the square `#` always leave one space. *(I indently don't put a space after square when I use inline comments.)* Inline comments are unnecessary and in fact distracting if they state the obvious. 
+***
 
---- DOCUMENTATION STRINGS ---
-- Write docstrings for all public modules, functions, classes, and methods. Docstrings are not necessary for non-public methods, but you should have a comment that describes what the method does. This comment should appear after the def line.
+### Documentation Strings
+Write docstrings for all public modules, functions, classes, and methods. Docstrings are not necessary for non-public methods, but you should have a comment that describes what the method does. This comment should appear after the def line.
 
-- We write docstrings inside a double triple quotes,
+We write docstrings inside a double triple quotes:
 ```python
 """Return a foobang
 
 Optional plotz says to frobnicate the bizbaz first.
 """
 ```
-- For one liner docstrings, please keep the closing """ on the same line.
+For one lined docstrings, please keep the closing `"""` on the same line.
+***
 
---- NAMING CONVENTIONS ---
-- Never use the characters 'l' (lowercase letter el), 'O' (uppercase letter oh), or 'I' (uppercase letter eye) as single character variable names. Conventions for every data type:
+### Naming Conventions
+Never use the characters 'l' (lowercase letter el), 'O' (uppercase letter oh), or 'I' (uppercase letter eye) as single character variable names. Conventions for every data type:
 
-  1.Package and Module Names
-  Modules should have short, all-lowercase names. Python packages should also have short, all-lowercase names, although the use of underscores is discouraged,
+- Package and Module Names  
+Modules should have short, all-lowercase names. Python packages should also have short, all-lowercase names, although the use of underscores is discouraged,
 ```python
 import mymathlib
 ```
-  2.Class Names
-  Class names should normally use the CapWords convention.
+
+- Class Names  
+Class names should normally use the CapWords convention.
 ```python
 class MyHolyClass:
     ...
 ```
-  3.Exception Names
-  Because exceptions should be classes, the class naming convention applies here. However, you should use the suffix "Error" on your exception names (if the exception actually is an error).
+
+- Exception Names  
+Because exceptions should be classes, the class naming convention applies here. However, you should use the suffix "Error" on your exception names (if the exception actually is an error).
 ```python
 class ValidationError(Exception):
     ...
 ```
-  4.Function and Variable Names
-  Function names should be lowercase, with words separated by underscores as necessary to improve readability. Variable names follow the same convention as function names. mixedCase is allowed only in contexts where that's already the prevailing style (e.g. threading.py), to retain backwards compatibility.
-  ```python
+
+- Function and Variable Names  
+Function names should be lowercase, with words separated by underscores as necessary to improve readability. Variable names follow the same convention as function names. mixedCase is allowed only in contexts where that's already the prevailing style (e.g. threading.py), to retain backwards compatibility.
+```python
 def my_sacred_func():
     ....
 my_own_var = 52
 # or in the latter scenario,
 mixedCasedVariable = 81
 ```
-  5.Global Variable Names
-  The conventions are about the same as those for functions,
+
+- Global Variable Names  
+The conventions are about the same as those for functions,
 ```python
 my_global_var = "everywhere"
 ```
-  6.Method Names and Instance Variables
-  Use the function naming rules: lowercase with words separated by underscores as necessary to improve readability. Use one leading underscore only for non-public methods and instance variables. (Although PEP8 says so, mixedCase can also be used)
+
+- Method Names and Instance Variables  
+Use the function naming rules: lowercase with words separated by underscores as necessary to improve readability. Use one leading underscore only for non-public methods and instance variables. (Although PEP8 says so, mixedCase can also be used)
 ```python
 def instance_method(self):
     ...
@@ -781,29 +836,28 @@ def class_method(cls):
 def static_method():
     ...
 ```
-  7.Function and Method Arguments
-  Always use 'self' for the first argument to instance methods. Always use cls for the 'first' argument to class methods,
+- Function and Method Arguments  
+  Always use 'self' for the first argument to instance methods. Always use cls for the 'first' argument to class methods. [*Example of different method types*](https://levelup.gitconnected.com/method-types-in-python-2c95d46281cd)
 ```python
-# Example of different method types: (https://levelup.gitconnected.com/method-types-in-python-2c95d46281cd)
 class MethodTypes:
 
     name = "Ragnar"
 
     def instance_method(self):
-    # Creates an instance atribute through keyword self
-    self.lastname = "Lothbrock"
-    print(self.name)
-    print(self.lastname)
-
+        # Creates an instance atribute through keyword self
+        self.lastname = "Lothbrock"
+        print(self.name)
+        print(self.lastname)
+    
     @classmethod
     def class_method(cls):
-    # Access a class atribute through keyword cls
-    cls.name = "Lagertha"
-    print(cls.name)
+        # Access a class atribute through keyword cls
+        cls.name = "Lagertha"
+        print(cls.name)
 
     @staticmethod
     def static_method():
-    print("This is a static method")
+        print("This is a static method")
 
 # Creates an instance of the class
 m = MethodTypes()
@@ -813,8 +867,8 @@ m.instance_method()
 MethodTypes.class_method()
 MethodTypes.static_method()
 ```
-  8.Constants
+- Constants  
   Constants are usually defined on a module level and written in all capital letters with underscores separating words,
-  ```python
+```python
 MAX_OVERFLOW
 ```
