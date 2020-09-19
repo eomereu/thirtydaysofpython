@@ -16,14 +16,14 @@
 
 ## [Thirty Days Of Python](https://github.com/codingforentrepreneurs/30-Days-of-Python-3.6/blob/master/PythonCheatSheet.md)
 
-&nbsp;-&nbsp;There is no type declaration while creating variables in Python,
+- There is no type declaration while creating variables in Python,
 ```python
 a = 32
 b = "python"
 ```
-&nbsp;-&nbsp;Comments in python are written by square `#` but it doesn't support multi-line commenting.
+- Comments in python are written by square `#` but it doesn't support multi-line commenting.
 
-&nbsp;-&nbsp;String concetenation,
+- String concetenation,
 ```python
 >>> "python" + " three"
 'python three'
@@ -32,16 +32,16 @@ b = "python"
 >>> "ab" * 2
 'abab'
 ```
-&nbsp;-&nbsp;Lists (called as arrays in other languages) in python are created with square brackets `[]`. The items in a list don't have to be of same type,
+- Lists (called as arrays in other languages) in python are created with square brackets `[]`. The items in a list don't have to be of same type,
 ```python
 my_list = [] #creating an empty list
 ["my first item"]
 ["my first item", "my second item", "true"] #this 'true' is a string
 ["my first item", "my second item", 52, True, False] #booleans in python start with capitalized letters
 ```
-&nbsp;-&nbsp;It is a much more better to use to stick with one usage along the code, for example using just single quotes `''` or double quotes `""` while handling strings. It increases the readability and stability of the code.
+- It is a much more better to use to stick with one usage along the code, for example using just single quotes `''` or double quotes `""` while handling strings. It increases the readability and stability of the code.
 
-&nbsp;-&nbsp;List indexing starts from 0 in python. Also string indexing...
+- List indexing starts from 0 in python. Also string indexing...
 ```python
 my_list = ["good job", "nice", "well done"]
 >>> my_list[0]
@@ -302,7 +302,7 @@ while True:
 ```
 ***
 ### Conditionals & Conditionals Expressions
-&nbsp;-&nbsp;The example syntaxes of an `if` condition,
+- The example syntaxes of an `if` condition,
 ```python
 a = 52
 b = 52
@@ -329,7 +329,7 @@ True
 ```
 As seen above `is` is the same thing with `==`. To oppose something in python we use `not` keyword instead of exclamation mark `!`. Also we use `elif` keyword instead of `else if` keyword in python.
 
-&nbsp;-&nbsp;`isinstance(val, type)`  
+- `isinstance(val, type)`  
     This is a useful function for type checking, it returns True if the val matches the type, False otherwise,
 ```python
 >>> isinstance(3, int)
@@ -339,12 +339,12 @@ False
 >>> isinstance("John", str)
 True
 ```
-&nbsp;-&nbsp;In python there is no `x++` or `x--` instead we use,
+- In python there is no `x++` or `x--` instead we use,
 ```python
 x += 1
 x -= 1
 ```
-&nbsp;-&nbsp;Ternary operator (the short version of if statement),
+- Ternary operator (the short version of if statement),
 ```python
 you_are = "kid" if age < 18 else "adult"
 ```
@@ -381,7 +381,7 @@ func(email="hello@world.com", to_list=signed_in_ones)
 ```
 ***PS:*** *Positional Arguments* must be written before the *Keyword Arguments* while defining the function, otherwise we get `SyntaxError` as *non-default argument follows default argument*
 
-&nbsp;-&nbsp;Anonymous functions are called as 'lambda' functions in python and its syntax is like following,
+- Anonymous functions are called as 'lambda' functions in python and its syntax is like following,
 ```python
 lambda x: x + 1
 
@@ -463,7 +463,7 @@ today.strftime('%d/%m/%Y') #04/09/2020
 - `str(var)`  
     Changes type of 'var' to string
 
-&nbsp;-&nbsp;`string.capitalize()`  
+- `string.capitalize()`  
 We can capitalize strings with this method,
 ```python
 "ali".capitalize() #'Ali'
@@ -592,23 +592,23 @@ My_Python_Module_2.py
 
 ## [PEP 8 - Style Guide for Python Code](https://www.python.org/dev/peps/pep-0008/)
 ### Indentation
-&nbsp;-&nbsp;Use 4 spaces per indentation level. PEP 8 recommends to use spaces over tabs, so to make this happen we can rearrange the function of 'tab' key in any editor we use. Whichever way is chosen, it must be followed throughout the whole code as Python 3 no more allows a mixed use of tabs and spaces. Other than this, using spaces will always keep our code correctly-aligned when we forced to copy & paste our code between different editors.
+- Use 4 spaces per indentation level. PEP 8 recommends to use spaces over tabs, so to make this happen we can rearrange the function of 'tab' key in any editor we use. Whichever way is chosen, it must be followed throughout the whole code as Python 3 no more allows a mixed use of tabs and spaces. Other than this, using spaces will always keep our code correctly-aligned when we forced to copy & paste our code between different editors.
 
-&nbsp;-&nbsp;Aligned with opening delimiter:
+- Aligned with opening delimiter:
 ```python
 foo = long_function_name(var_one, var_two,
                         var_three, var_four)
 
 ```
 
-&nbsp;-&nbsp;Add 4 spaces (an extra level of indentation) to distinguish arguments from the rest:
+- Add 4 spaces (an extra level of indentation) to distinguish arguments from the rest:
 ```python
 def long_function_name(
         var_one, var_two, var_three,
         var_four):
     print(var_one)
 ```
-&nbsp;-&nbsp;Hanging indents should add a level:
+- Hanging indents should add a level:
 ```python
 foo = long_function_name(
     var_one, var_two,
@@ -620,7 +620,7 @@ foo = long_function_name(
 ***
 
 
-&nbsp;-&nbsp;The closing brace/bracket/parenthesis on multiline constructs may either line up under the first non-whitespace character of the last line of list, as in:
+- The closing brace/bracket/parenthesis on multiline constructs may either line up under the first non-whitespace character of the last line of list, as in:
 ```python
 my_list = [
     1, 2, 3,
@@ -628,7 +628,7 @@ my_list = [
     ]
 ```
 
-&nbsp;-&nbsp;or it may be lined up under the first character of the line that starts the multiline construct, as in:
+- or it may be lined up under the first character of the line that starts the multiline construct, as in:
 ```python
     my_list = [
         1, 2, 3,
@@ -636,15 +636,15 @@ my_list = [
     ]
 
 --- MAXIMUM LINE LENGTH ---
-&nbsp;-&nbsp;Limit all lines to a maximum of 79 characters. For flowing long blocks of text with fewer structural restrictions (docstrings or comments), the line length should be limited to 72 characters. Backslashes may still be appropriate at times. For example, long, multiple with-statements cannot use implicit continuation, so "backslashes" are acceptable:
+- Limit all lines to a maximum of 79 characters. For flowing long blocks of text with fewer structural restrictions (docstrings or comments), the line length should be limited to 72 characters. Backslashes may still be appropriate at times. For example, long, multiple with-statements cannot use implicit continuation, so "backslashes" are acceptable:
     with open('/path/to/some/file/you/want/to/read') as file_1, \
         open('/path/to/some/file/being/written', 'w') as file_2:
         file_2.write(file_1.read())
 
 ### Line Break
-&nbsp;-&nbsp;Following the tradition from mathematics usually results in more readable code:
+- Following the tradition from mathematics usually results in more readable code:
 
-&nbsp;-&nbsp;easy to match operators with operands
+- easy to match operators with operands
 ```python
 income = (gross_wages
             + taxable_interest
@@ -661,21 +661,21 @@ import sys
 ```
 
 --- WHITESPACES ---
-&nbsp;-&nbsp;Avoid extraneous whitespace in the following situations:
+- Avoid extraneous whitespace in the following situations:
 
-&nbsp;-&nbsp;Immediately inside parentheses, brackets or braces:
+- Immediately inside parentheses, brackets or braces:
 ```python
 spam(ham[1], {eggs: 2})
 ```
-&nbsp;-&nbsp;Between a trailing comma and a following close parenthesis:
+- Between a trailing comma and a following close parenthesis:
 ```python
 foo = (0,)
 ```
-&nbsp;-&nbsp;Immediately before a comma, semicolon, or colon:
+- Immediately before a comma, semicolon, or colon:
 ```python
 if x == 4: print x, y; x, y = y, x
 ```
-&nbsp;-&nbsp;However, in a slice the colon acts like a binary operator, and should have equal amounts on either side (treating it as the operator with the lowest priority). In an extended slice, both colons must have the same amount of spacing applied. Exception: when a slice parameter is omitted, the space is omitted:
+- However, in a slice the colon acts like a binary operator, and should have equal amounts on either side (treating it as the operator with the lowest priority). In an extended slice, both colons must have the same amount of spacing applied. Exception: when a slice parameter is omitted, the space is omitted:
 ```python
 ham[1:9], ham[1:9:3], ham[:9:3], ham[1::3], ham[1:9:]
 ham[lower:upper], ham[lower:upper:], ham[lower::step]
@@ -683,24 +683,24 @@ ham[lower+offset : upper+offset]
 ham[: upper_fn(x) : step_fn(x)], ham[:: step_fn(x)]
 ham[lower + offset : upper + offset]
 ```
-&nbsp;-&nbsp;Immediately before the open parenthesis that starts the argument list of a function call:
+- Immediately before the open parenthesis that starts the argument list of a function call:
 ```python
 spam(1)
 ```
-&nbsp;-&nbsp;Immediately before the open parenthesis that starts an indexing or slicing:
+- Immediately before the open parenthesis that starts an indexing or slicing:
 ```python
 dct['key'] = lst[index]
 ```
-&nbsp;-&nbsp;More than one space around an assignment (or other) operator to align it with another:
+- More than one space around an assignment (or other) operator to align it with another:
 ```python
 x = 1
 y = 2
 long_variable = 3
 ```
 --- OTHER RECOMMENDETATIONS ON WHITESPACING ---
-&nbsp;-&nbsp;Always surround these binary operators with a single space on either side: assignment (=), augmented assignment (+=, -= etc.), comparisons (==, <, >, !=, <>, <=, >=, in, not in, is, is not), Booleans (and, or, not).
+- Always surround these binary operators with a single space on either side: assignment (=), augmented assignment (+=, -= etc.), comparisons (==, <, >, !=, <>, <=, >=, in, not in, is, is not), Booleans (and, or, not).
 
-&nbsp;-&nbsp;If operators with different priorities are used, consider adding whitespace around the operators with the lowest priority(ies). Use your own judgment; however, never use more than one space, and always have the same amount of whitespace on both sides of a binary operator:
+- If operators with different priorities are used, consider adding whitespace around the operators with the lowest priority(ies). Use your own judgment; however, never use more than one space, and always have the same amount of whitespace on both sides of a binary operator:
 ```python
 i = i + 1
 submitted += 1
@@ -708,35 +708,35 @@ x = x*2 - 1
 hypot2 = x*x + y*y
 c = (a+b) * (a-b)
 ```
-&nbsp;-&nbsp;Don't use spaces around the = sign when used to indicate a keyword argument, or when used to indicate a default value for an unannotated function parameter:
+- Don't use spaces around the = sign when used to indicate a keyword argument, or when used to indicate a default value for an unannotated function parameter:
 ```python
 def complex(real, imag=0.0):
     return magic(r=real, i=imag)
 ```
-&nbsp;-&nbsp;When combining an argument annotation with a default value, however, do use spaces around the = sign:
+- When combining an argument annotation with a default value, however, do use spaces around the = sign:
 ```python
 def munge(sep: AnyStr = None): ...
 def munge(input: AnyStr, sep: AnyStr = None, limit=1000): ...
 ```
 --- COMMENTS ---
-&nbsp;-&nbsp;Comments in python are written by square '#' and it doesn't support multi-line commenting. After the square '#' always leave one space. (I indently don't put a space after square when I use inline comments.)
+- Comments in python are written by square '#' and it doesn't support multi-line commenting. After the square '#' always leave one space. (I indently don't put a space after square when I use inline comments.)
 
-&nbsp;-&nbsp;Inline comments are unnecessary and in fact distracting if they state the obvious. 
+- Inline comments are unnecessary and in fact distracting if they state the obvious. 
 
 --- DOCUMENTATION STRINGS ---
-&nbsp;-&nbsp;Write docstrings for all public modules, functions, classes, and methods. Docstrings are not necessary for non-public methods, but you should have a comment that describes what the method does. This comment should appear after the def line.
+- Write docstrings for all public modules, functions, classes, and methods. Docstrings are not necessary for non-public methods, but you should have a comment that describes what the method does. This comment should appear after the def line.
 
-&nbsp;-&nbsp;We write docstrings inside a double triple quotes,
+- We write docstrings inside a double triple quotes,
 ```python
 """Return a foobang
 
 Optional plotz says to frobnicate the bizbaz first.
 """
 ```
-&nbsp;-&nbsp;For one liner docstrings, please keep the closing """ on the same line.
+- For one liner docstrings, please keep the closing """ on the same line.
 
 --- NAMING CONVENTIONS ---
-&nbsp;-&nbsp;Never use the characters 'l' (lowercase letter el), 'O' (uppercase letter oh), or 'I' (uppercase letter eye) as single character variable names. Conventions for every data type:
+- Never use the characters 'l' (lowercase letter el), 'O' (uppercase letter oh), or 'I' (uppercase letter eye) as single character variable names. Conventions for every data type:
 
   1.Package and Module Names
   Modules should have short, all-lowercase names. Python packages should also have short, all-lowercase names, although the use of underscores is discouraged,
