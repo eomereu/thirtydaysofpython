@@ -12,6 +12,7 @@
 |Indent. w both tabs & spcs |disallows mixing |
 |- |py2to3utility |
 ***
+***
 
 ## [Thirty Days Of Python](https://github.com/codingforentrepreneurs/30-Days-of-Python-3.6/blob/master/PythonCheatSheet.md)
 
@@ -20,7 +21,7 @@
 a = 32
 b = "python"
 ```
-&nbsp;-&nbsp;Comments in python are written by square '#' and it doesn't support multi-line commenting.
+&nbsp;-&nbsp;Comments in python are written by square `#` but it doesn't support multi-line commenting.
 
 &nbsp;-&nbsp;String concetenation,
 ```python
@@ -31,14 +32,14 @@ b = "python"
 >>> "ab" * 2
 'abab'
 ```
-&nbsp;-&nbsp;Lists (called as arrays in other languages) in python are created with square brackets '[]'. The items in a list don't have to be of same type,
+&nbsp;-&nbsp;Lists (called as arrays in other languages) in python are created with square brackets `[]`. The items in a list don't have to be of same type,
 ```python
 my_list = [] #creating an empty list
 ["my first item"]
 ["my first item", "my second item", "true"] #this 'true' is a string
 ["my first item", "my second item", 52, True, False] #booleans in python start with capitalized letters
 ```
-&nbsp;-&nbsp;It is a much more better to use to stick with one usage along the code, for example using just single quotes '' or double quotes "" while handling strings. It increases the readability and stability of the code.
+&nbsp;-&nbsp;It is a much more better to use to stick with one usage along the code, for example using just single quotes `''` or double quotes `""` while handling strings. It increases the readability and stability of the code.
 
 &nbsp;-&nbsp;List indexing starts from 0 in python. Also string indexing...
 ```python
@@ -48,9 +49,9 @@ my_list = ["good job", "nice", "well done"]
 >>> "vivaldi"[0]
 'v'
 >>> my_list[10]
-IndexError: list index out of range`
+IndexError: list index out of range
 ```
-
+***
 ### Some List Operations
 1. `list.append(element)`  
     Adds a new elemet at the end of a list,
@@ -83,104 +84,128 @@ IndexError: list index out of range`
 14
 ```
 5. `list.count(element)`  
-    Returns count of how many times 'element' occurs in list,
+    Returns count of how many times *element* occurs in list,
 ```python
 >>> my_list.count(4)
 2
 ```
 6. `list.extend(list2)`  
-    Appends the contents of 'list2' to 'list'. If we type a 'string' instead of 'list2' it will append all single letters one by one to the list,
+    Appends the contents of *list2* to *list*. If we type a *string* instead of *list2* it will append all single letters one by one to the list,
 ```python
-extra = [5, 6, 6, 7]
-my_list.extend(extra)
-my_list #[1, 3, 4, 4, 5, 6, 6, 7]
-my_list.extend("op")
-my_list #[1, 3, 4, 4, 5, 6, 6, 7, 'o', 'p']
+>>> extra = [5, 6, 6, 7]
+>>> my_list.extend(extra)
+>>> my_list
+[1, 3, 4, 4, 5, 6, 6, 7]
+>>> my_list.extend("op")
+>>> my_list
+[1, 3, 4, 4, 5, 6, 6, 7, 'o', 'p']
 ```
 7. `list.index(element)`  
     Returns the lowest index in the list that element appears on,
 ```python
-my_list.index(4) #2
+>>> my_list.index(4)
+2
 ```
 8. `list.insert(index, element)`  
-    Inserts 'element' into list at offset index,
+    Inserts *element* into list at offset index,
 ```python
-my_list.insert(1, 2)
-my_list #[1, 2, 3, 4, 4, 5, 6, 6, 7, 'o', 'p',]
+>>> my_list.insert(1, 2)
+>>> my_list
+[1, 2, 3, 4, 4, 5, 6, 6, 7, 'o', 'p',]
 ```
 9. `list.remove(element)`  
     Removes the element that is on the lowest index from list if multiple. If there is just one from the element it simply removes it,
 ```python
-my_list.remove(4)
-my_list #[1, 2, 3, 4, 5, 6, 6, 7, 'o', 'p']
-my_list.remove('o')
-my_list #[1, 2, 3, 4, 5, 6, 6, 7, 'p']
+>>> my_list.remove(4)
+>>> my_list
+[1, 2, 3, 4, 5, 6, 6, 7, 'o', 'p']
+>>> my_list.remove('o')
+>>> my_list
+[1, 2, 3, 4, 5, 6, 6, 7, 'p']
 ```
-1. list.reverse()
+10. `list.reverse()`  
     Reverses the list,
 ```python
-my_list.reverse()
-my_list #['p', 7, 6, 6, 5, 4, 3, 2, 1]
+>>> my_list.reverse()
+>>> my_list
+['p', 7, 6, 6, 5, 4, 3, 2, 1]
 ```
-1. sorted(list)
-    Returns a sorted version of 'list' regarding the 'key'. Does not alter the original list. It sorts from lowest to highest (from a to z on strings),
+11. `sorted(list)`  
+    Returns a sorted version of *list* regarding the *key*. Does not alter the original list. It sorts from lowest to highest (from a to z on strings),
 ```python
-list_1 = [1, 52, 5, 66, 33, 27]
-sorted(list_1) #[1, 5, 27, 33, 52, 66]
-list_2 = ["mehmet", "ali", "zeynep", "kadir"]
-sorted(list_2) #["ali", "kadir", "mehmet", "zeynep"]
+>>> list_1 = [1, 52, 5, 66, 33, 27]
+>>> sorted(list_1)
+[1, 5, 27, 33, 52, 66]
+>>> list_2 = ["mehmet", "ali", "zeynep", "kadir"]
+>>> sorted(list_2)
+["ali", "kadir", "mehmet", "zeynep"]
 ```
-1. sorted(list, reverse=True)
-    Returns a reverse-sorted version of 'list' regarding the 'key'. Does not alter the original list. It sorts from highest to lowest (from z to a on strings),
+12. `sorted(list, reverse=True)`  
+    Returns a reverse-sorted version of *list* regarding the *key*. Does not alter the original list. It sorts from highest to lowest (from z to a on strings),
 ```python
-sorted(list_1, reverse=True) #[66, 52, 33, 27, 5, 1]
-sorted(list_2, reverse=True) #["zeynep", "mehmet", "kadir", "ali"]
+>>> sorted(list_1, reverse=True)
+[66, 52, 33, 27, 5, 1]
+>>> sorted(list_2, reverse=True)
+["zeynep", "mehmet", "kadir", "ali"]
 ```
-1. sorted(list, key, reverse)
-    Returns a sorted version of 'list' based on the 'key'. On demand reverse property can also be used by setting to True or False. Does not alter the original list.
-    key=len provides a sorting based on the length of the words, from shortest to longest,
+13. `sorted(list, key, reverse)`  
+    Returns a sorted version of *list* based on the *key*. On demand reverse property can also be used by setting to True or False. Does not alter the original list.
+    `key=len` provides a sorting based on the length of the words, from shortest to longest,
 ```python
-list_3 = ["mike", "alexandra", "joe"]
-sorted(list_1, key=len) #["joe", "mike", "alexandra"]
+>>> list_3 = ["mike", "alexandra", "joe"]
+>>> sorted(list_1, key=len)
+["joe", "mike", "alexandra"]
 ```
-    key=str.lower Hiddenly converts all strings to lowercase to help to sort it in the correct way, if we don't use this sorted function will sort the words beginning with uppercased and lowercased seperately because it actually sorts them according to their UNICODE values, that's why it will first sort the ones beginning with capitalized letters within theirselves and the ones beginning with lowercased letters within thierselves seperately,
+`key=str.lower` Hiddenly converts all strings to lowercase to help to sort it in the correct way, if we don't use this sorted function will sort the words beginning with uppercased and lowercased seperately because it actually sorts them according to their UNICODE values, that's why it will first sort the ones beginning with capitalized letters within theirselves and the ones beginning with lowercased letters within thierselves seperately,
 ```python
-names_with_case = ['Harry', 'Suzy', 'al', 'mark']
+>>> names_with_case = ['Harry', 'Suzy', 'al', 'mark']
+
 # sorting w/o using 'key=str.lower' property
-sorted(names_with_case) #['Harry', 'Suzy', 'al', 'mark']
+>>> sorted(names_with_case)
+['Harry', 'Suzy', 'al', 'mark']
+
 # sorting with using 'key=str.lower' property
-sorted(names_with_case, key=str.lower) #['al', 'Harry', 'mark', 'Suzy']
+>>> sorted(names_with_case, key=str.lower)
+['al', 'Harry', 'mark', 'Suzy']
 ```
-    As well as pre-defined functions, user-defined functions can also be used with 'key' argument,
-      In below code, it simply reverses the string and then evaluates the first letter for sorting, which in conclusion means they are being sorted based on their last letters,
+As well as pre-defined functions, user-defined functions can also be used with `key` argument...  
+
+In below code, it simply reverses the string and then evaluates the first letter for sorting, which in conclusion means they are being sorted based on their last letters,
 ```python
 def reverse_word(word):
     return word[::-1]
-words = ['banana', 'pie', 'Washington', 'book']
-sorted(words, key=reverse_word) #['banana', 'pie', 'book', 'Washington']
+
+>>> words = ['banana', 'pie', 'Washington', 'book']
+>>> sorted(words, key=reverse_word)
+['banana', 'pie', 'book', 'Washington']
 ```
-1. list.sort()
-    Sorts the 'list' from lowest to highest (from a to z on strings). It modifies the original list in place and returns 'None',
+14. `list.sort()`  
+    Sorts the *list* from lowest to highest (from a to z on strings). It modifies the original list in place and returns 'None',
 ```python
-values_to_sort = [5, 2, 6, 1]
-values_to_sort.sort()
-values_to_sort #[1, 2, 5, 6]
+>>> values_to_sort = [5, 2, 6, 1]
+>>> values_to_sort.sort()
+>>> values_to_sort
+[1, 2, 5, 6]
 ```
-1. list.sort(key, reverse)
-    All the properties in 'sorted' of 'key' and 'reverse' also apply here... Furthermore here we can mention about anonymous (lambda in python) functions,
-      In below code, it simply reverses the string and then evaluates the first letter for sorting, which in conclusion means they are being sorted based on their last letters but in the reverse order this time unlike the one above,
+15. `list.sort(key, reverse)`  
+    All the properties in `sorted` of *key* and *reverse* also apply here... Furthermore here we can mention about anonymous (lambda in python) functions,  
+    
+    In below code, it simply reverses the string and then evaluates the first letter for sorting, which in conclusion means they are being sorted based on their last letters but in the reverse order this time unlike the one above,
 ```python
-words = ['banana', 'pie', 'Washington', 'book']
-words.sort(key=lambda x: x[::-1], reverse=True)
-words #['Washington', 'book', 'pie', 'banana']
+>>> words = ['banana', 'pie', 'Washington', 'book']
+>>> words.sort(key=lambda x: x[::-1], reverse=True)
+>>> words
+['Washington', 'book', 'pie', 'banana']
 ```
-1. sum(list)
+16. `sum(list)`  
     Returns the summation of the numbers in a given list,
 ```python
-abc = [4,6,3,7]
-sum(abc) #20
+>>> abc = [4,6,3,7]
+>>> sum(abc)
+20
 ```
-Dictionaries
+***
+### Dictionaries
 Dictionaries are like lists but they consist of key-value pairs and curly braces around them. We can use both strings and integers as keys in both python 2 and 3 unlike the other languages. We can have lists, tuples or dictionaries inside dictionaries
 ```python
 my_dict = {
@@ -196,20 +221,23 @@ my_dict = {
 ```
 We can reassign values to the keys,
 ```python
-my_dict["isCool"] #True
-my_dict["isCool"] = False
-my_dict["isCool"] #False
+>>> my_dict["isCool"]
+True
+>>> my_dict["isCool"] = False
+>>> my_dict["isCool"]
+False
 ```
 We can create a new key-value pair,
 ```python
 my_dict[66] = "Yozgat"
 ```
-If I try to a nonexistent key, I get KeyError,
+If we try to access to a nonexistent key, we get `KeyError`,
 ```python
 my_dict["surname"] #KeyError: 'surname'
 my_dict[3] #KeyError: 3
 ```
-Tuples
+***
+### Tuples
 Unlike lists and dictionaries, tuples are immutable like strings and so cannot be changed,
 ```python
 my_tup = (1, 2, (4, 5), [21, 54])
@@ -219,30 +247,38 @@ But lists or dictionaries inside of a tuple can be changed,
 my_tup[3][1] = 9
 my_tup #1, 2, (4, 5), [21, 9])
 ```
-Also however, we can add things to the tuple,
+Also however, we can add things to tuples,
 ```python
-my_tup += "append me man"
-my_tup #(1, 2, (4, 5), [21, 54], "append me man")
-my_tup += ((9)) #TypeError
-my_tup += (("9")) #TypeError
-my_tup += ((9),)
-my_tup #(1, 2, (4, 5), [21, 54], 9)
-my_tup += ((9,10))
-my_tup #(1, 2, (4, 5), [21, 54], 9, 9, 10)
-my_tup += ((12, 13),)
-my_tup #(1, 2, (4, 5), [21, 54], 9, 9, 10, (12, 13))
+>>> my_tup += "append me man"
+>>> my_tup
+(1, 2, (4, 5), [21, 54], "append me man")
+>>> my_tup += ((9))
+TypeError
+>>> my_tup += (("9"))
+TypeError
+>>> my_tup += ((9),)
+>>> my_tup
+(1, 2, (4, 5), [21, 54], 9)
+>>> my_tup += ((9,10))
+>>> my_tup
+(1, 2, (4, 5), [21, 54], 9, 9, 10)
+>>> my_tup += ((12, 13),)
+>>> my_tup
+(1, 2, (4, 5), [21, 54], 9, 9, 10, (12, 13))
 ```
-Loops
-  1.for Loop
-    This loop doesn't have a classical syntax in python. It can be used to iterate over a sequence of a list, string, tuple, set, array, data frame. for loops cannot be empty, but if you for some reason have a for loop with no content, put in the 'pass' statement to avoid getting an error.
+***
+### Loops
+1. `for`  
+    This loop doesn't have a classical syntax in python. It can be used to iterate over a sequence of a list, string, tuple, set, array, data frame. for loops cannot be empty, but if you for some reason have a for loop with no content, put in the `pass` statement to avoid getting an error.
 ```python
 for i in "Datacamp":
     pass
 for i in list:
     pass
 ```
-  1.range(start, end, step) Function
-    To iterate over a series of items For loops use the range function. It will start from including 'start' and will end on not-including 'end' by going as 'step'. If we just type one input inside the parantheses it means 'end' and will start from including zero. If we input two values, we mean 'start' and 'end'. The range function returns a new list with numbers of that specified range based on the length of the sequence,
+***Some useful functions that can be used with `for` loop:***
+- `range(start, end, step)`  
+    To iterate over a series of items `for` loops use the range function. It will start from including *start* and will end on not-including *end* by going as *step*. If we just type one input inside the parantheses it means *end* and will start from including zero. If we input two values, we mean *start* and *end*. The range function returns a new list with numbers of that specified range based on the length of the sequence,
 ```python
 for i in range(10): #i € [0,10)
     pass
@@ -253,19 +289,20 @@ for i in range(len(sequence)):
     if type(element) == int:
         sequence[i] = element + 4
 ```
-  1+.enumerate(list) Function
+- `.enumerate(list)`  
     This function can be used with for loop to work with both indexes and values of items in a list,
 ```python
 for idx, val in enumerate(ints):
     print(idx, val)
 ```
-  2.while Loop
+2. `while`
 ```python
 while True:
     pass
 ```
-Conditionals & Conditionals Expressions
-&nbsp;-&nbsp;The example syntaxes of an 'if' condition,
+***
+### Conditionals & Conditionals Expressions
+&nbsp;-&nbsp;The example syntaxes of an `if` condition,
 ```python
 a = 52
 b = 52
@@ -283,30 +320,36 @@ if a is b:
 if a != b:
     print("false")
 
-not True #False
-!True #SyntaxError
-3**3 == 27 #True
-------------------
+>>> not True
+False
+>>> !True
+SyntaxError
+>>> 3**3 == 27
+True
 ```
-  As seen above "is" is the same thing with "==". To oppose something in python we use "not" keyword instead of exclamation mark "!". Also we use "elif" keyword instead of "else if" keyword in python.
+As seen above `is` is the same thing with `==`. To oppose something in python we use `not` keyword instead of exclamation mark `!`. Also we use `elif` keyword instead of `else if` keyword in python.
 
-&nbsp;-&nbsp;isinstance(val, type)
+&nbsp;-&nbsp;`isinstance(val, type)`  
     This is a useful function for type checking, it returns True if the val matches the type, False otherwise,
 ```python
-isinstance(3, int) #True
-isinstance(3.0, int) #False
-isinstance("John", str) #True
+>>> isinstance(3, int)
+True
+>>> isinstance(3.0, int)
+False
+>>> isinstance("John", str)
+True
 ```
-&nbsp;-&nbsp;In python there is no "x++" or "x--" instead we use,
+&nbsp;-&nbsp;In python there is no `x++` or `x--` instead we use,
 ```python
 x += 1
 x -= 1
 ```
 &nbsp;-&nbsp;Ternary operator (the short version of if statement),
 ```python
-'kid' if age < 18 else 'adult'
+you_are = "kid" if age < 18 else "adult"
 ```
-Functions
+***
+### Functions
   Functions let us to execute a bunch of code again and again w/o rewriting them every time,
 ```python
 def my_function(int_list):
@@ -316,93 +359,112 @@ def my_function(int_list):
     #  avg = sum(int_list)/(len(int_list)*1.0)
     return None
 ```
-  There are 2 types of arguments that can be passed to functions:
-    1.Positional Arguments
-      Actually these are the ones that are generally used and the classical ones. They have to be given to the function while calling it otherwise we get TypeError as 'missing required positional arguments'
+  ***There are 2 types of arguments that can be passed to functions:***
+1. Positional Arguments  
+    Actually these are the ones that are generally used and the classical ones. They have to be given to the function while calling it otherwise we get `TypeError` as *missing required positional arguments*
 ```python
 def my_func(arg_1, arg_2):
     pass
 ```
-    2.Keyword Arguments
-      These are the ones that coded with a default value when defining the function. They don't have to be called while we call the function.
+2. Keyword Arguments  
+    These are the ones that coded with a default value when defining the function. They don't have to be called while we call the function.
 ```python
 def my_func(arg_1, arg_2, kwarg_1=None, kwarg_2="abc"):
     if kwarg_1 != None:
     print(kwarg_1)
 ```
-      It is a better practice to send keyword arguments with argument names while calling it, in terms of clarification of things going on,
+It is a better practice to send keyword arguments with argument names while calling it, in terms of clarification of things going on,
 ```python
 def func(email=email, to_list=to_list):
     pass
 func(email="hello@world.com", to_list=signed_in_ones)
 ```
-    PS: 'Positional Arguments' must be written before the 'Keyword Arguments' while defining the function, otherwise we get SyntaxError as 'non-default argument follows default argument'
+***PS:*** *Positional Arguments* must be written before the *Keyword Arguments* while defining the function, otherwise we get `SyntaxError` as *non-default argument follows default argument*
 
-  Anonymous functions are called as 'lambda' functions in python and its syntax is like following,
+&nbsp;-&nbsp;Anonymous functions are called as 'lambda' functions in python and its syntax is like following,
 ```python
 lambda x: x + 1
+
 # We can directly name it like a variable,
-add_one = lambda x: x + 1
-add_one(2) #3
+>>> add_one = lambda x: x + 1
+>>> add_one(2)
+3
+
 # Here it directly takes 2 and 3 as arguments and returns the result,
-(lambda x, y: x + y)(2, 3) #5
+>>> (lambda x, y: x + y)(2, 3)
+5
+
 # An example of a higher order function,
-high_ord_func = lambda x, func: x + func(x)
-high_ord_func(2, lambda x: x * x) #6
-high_ord_func(2, lambda x: x + 3) #7
+>>> high_ord_func = lambda x, func: x + func(x)
+>>> high_ord_func(2, lambda x: x * x)
+6
+>>> high_ord_func(2, lambda x: x + 3)
+7
 ```
-String Substitution
-  1. str.format(var="value")
+***
+### String Substitution
+1. `str.format(var="value")`  
   This is another way of formatting strings,
 ```python
 "This is {var_a} formatted string".format(var_a="variable based")
 ```  
-  2. str.format("value")
+2. `str.format("value")`  
   Other than working with variable names we can also work with their positionings,
 ```python
-text = "This {0} an {1}. An {1} {0} an important thing.".format("is", "argument")
-text #'This is an argument. An argument is an important thing.'
+>>> text = "This {0} an {1}. An {1} {0} an important thing.".format("is", "argument")
+>>> text
+'This is an argument. An argument is an important thing.'
 ```
-  3. str %("value")
+  3. `str %("value")`  
   This method is more practical than the format method,
 ```python
-a = "%s me %s!" %("Format", "mate")
-a #'Format me mate!'
-b = "How to write %%s %s" %("is like this")
-b #'How to write %s is like this'
+>>> a = "%s me %s!" %("Format", "mate")
+>>> a
+'Format me mate!'
+>>> b = "How to write %%s %s" %("is like this")
+>>> b
+'How to write %s is like this'
 ```
-  4. "%.xf" %(num)
+  4. `"%.xf" %(num)`  
   Float substitution is used to show how many decimal place ('x' above) we want to show,
 ```python
-t = "8 decimal places: %.8f" %(52)
-t #'8 decimal places: 52.00000000'
-f = "Limit the places to 2: %.2f" %(3.146454634736346)
-f #'Limit the places to 2: 3.14'
+>>> t = "8 decimal places: %.8f" %(52)
+>>> t
+'8 decimal places: 52.00000000'
+>>> f = "Limit the places to 2: %.2f" %(3.146454634736346)
+>>> f
+'Limit the places to 2: 3.14'
 ```
-  5. datetime
+  5. `datetime`  
   Date using and substitution can be used via importing a built in library,
 ```python
 import datetime
 today = datetime.date.today()
-today #datetime.date(2020, 9, 3)
+
 # yyyy, m, d
-now = datetime.datetime.now()
-now #datetime.datetime(2020,9, 3, 07, 24, 32, 94518)
+>>> today
+datetime.date(2020, 9, 3)
+>>> now = datetime.datetime.now()
+
 # yyyy, m, d, hh, mm, ss, ms
-text = today.strftime('%-m/%-d/%y')
-print(text) #9/3/20
+>>> now
+datetime.datetime(2020,9, 3, 07, 24, 32, 94518)
+
 # m/d/yy
+>>> text = today.strftime('%-m/%-d/%y')
+>>> print(text)
+9/3/20
 ```
   We can also format our date like the following,
 ```python    
 today.strftime('%d/%m/%Y') #04/09/2020
 ```
 
-&nbsp;-&nbsp;str(var)
+- `str(var)`  
     Changes type of 'var' to string
 
-&nbsp;-&nbsp;string.capitalize()
-    We can capitalize strings with the method above,
+&nbsp;-&nbsp;`string.capitalize()`  
+We can capitalize strings with this method,
 ```python
 "ali".capitalize() #'Ali'
 ```
