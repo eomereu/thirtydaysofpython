@@ -1,16 +1,21 @@
 ## The Holy Python Cheat Sheet
 Contents:
-1. [Thirty Days Of Python - Udemy Course Notes](https://github.com/eomereu/thirtydaysofpython/blob/master/cheatSheet.md#thirty-days-of-python)
+1. [Thirty Days Of Python - Udemy Course Notes](https://github.com/eomereu/thirtydaysofpython/blob/master/cheatSheet.md#thirty-days-of-python-udemy-course-notes)  
+   - Main Stuff
    1. [Lists](https://github.com/eomereu/thirtydaysofpython/blob/master/cheatSheet.md#lists)
    1. [Dictionaries](https://github.com/eomereu/thirtydaysofpython/blob/master/cheatSheet.md#dictionaries)
    1. [Tuples](https://github.com/eomereu/thirtydaysofpython/blob/master/cheatSheet.md#tuples)
    1. [Loops](https://github.com/eomereu/thirtydaysofpython/blob/master/cheatSheet.md#loops)
-   1. [Conditionals & Conditional Expressions](https://github.com/eomereu/thirtydaysofpython/blob/master/cheatSheet.md#conditionals--conditionals-expressions)
+   1. [Conditionals & Conditional Expressions](https://github.com/eomereu/thirtydaysofpython/blob/master/cheatSheet.md#conditionals--conditional-expressions)
    1. [Functions](https://github.com/eomereu/thirtydaysofpython/blob/master/cheatSheet.md#functions)
    1. [String Substitution](https://github.com/eomereu/thirtydaysofpython/blob/master/cheatSheet.md#string-substitution)
    1. [Classes](https://github.com/eomereu/thirtydaysofpython/blob/master/cheatSheet.md#classes)
    1. [Ineritence](https://github.com/eomereu/thirtydaysofpython/blob/master/cheatSheet.md#inheritence)
-   1. [Import](https://github.com/eomereu/thirtydaysofpython/blob/master/cheatSheet.md#import)
+   1. [Import](https://github.com/eomereu/thirtydaysofpython/blob/master/cheatSheet.md#import)  
+   1. [Exception Handling](https://github.com/eomereu/thirtydaysofpython/blob/master/cheatSheet.md#exception-handling)
+   - Further Cover
+   1. [Python CSV and E-mail](https://github.com/eomereu/thirtydaysofpython/blob/master/cheatSheet.md#python-csv-and-e-mail)
+
 1. [Differences Between Python2 & Python3](https://github.com/eomereu/thirtydaysofpython/blob/master/cheatSheet.md#differences-between-python2--python3)
 1. [PEP 8 - Style Guide for Python Code](https://github.com/eomereu/thirtydaysofpython/blob/master/cheatSheet.md#pep-8---style-guide-for-python-code)
    1. [Indentation](https://github.com/eomereu/thirtydaysofpython/blob/master/cheatSheet.md#indentation)
@@ -23,8 +28,9 @@ Contents:
    1. [Documentation Strings](https://github.com/eomereu/thirtydaysofpython/blob/master/cheatSheet.md#documentation-strings)
    1. [Naming Conventions](https://github.com/eomereu/thirtydaysofpython/blob/master/cheatSheet.md#naming-conventions)
 ***
+***
 
-## [Thirty Days Of Python](https://github.com/codingforentrepreneurs/30-Days-of-Python-3.6/blob/master/PythonCheatSheet.md)
+## [Thirty Days Of Python - Udemy Course Notes](https://github.com/codingforentrepreneurs/30-Days-of-Python-3.6/blob/master/PythonCheatSheet.md)
 
 - There is no type declaration while creating variables in Python,
 ```python
@@ -601,24 +607,83 @@ My_Python_Module_2.py
 ```
 ***
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+### Exception Handling
+Simply put the code that may cause an error into `try` block and specify the action based on specific errors or any error in `except` blocks:
+```python
+try:
+    # All code that may cause an error goes here like:
+    SMTP.login(username, password)
+except AnySpecificError:
+    # Runs only when AnySpecificError occurs
+    warn_and_notify_user()
+except AnySpecificError:
+    # Runs only when AnyOtherSpecificError occurs
+    warn_and_notify_user()
+except:
+    # Runs when any other error occurd besides AnySpecificError and AnyOhterSpecificError
+    say_that_an_error_occured()
+```
 ***
+
+### Python CSV and E-mail
+The documentation used throughout the course:
+- [SMTP Library](https://docs.python.org/3/library/smtplib.html#module-smtplib)
+- [Email Module](https://docs.python.org/3/library/email.html#module-email)  
+
+>First of all enable *POP* and *IMAP* from email settings.  
+
+Configurations for gmail:
+```python
+host = "smtp.gmail.com"
+port = 587
+```
+To connect to the service and create a connection object:
+```python
+import smptlib
+SMTP = smtplib.SMTP(host, port)
+```
+>Here we can also import the things one by one like `from smtplib import SMTP, SMTPAuthenticationError` but in that case leading *smtplib.* should not be added. Then it's simply like `SMTP = SMTP(host,port)` *(referring the line above)*
+
+Following line is necessary before we may login. It kinda says hello to the service:
+```python
+SMTP.ehlo()
+```
+To start the encryption while connecting/communicating:
+```python
+SMTP.starttls()
+```
+To login:
+```python
+SMTP.login(username, password)
+```
+>If it gives `SMTPAuthenticationError` despite all credentials are correct then (on gmail) we need to enable **Less secure app access**!  
+
+To send message:
+```python
+SMTP.sendmail(from_email, to_list, message)
+```
+To quit the connection:
+```python
+SMTP.quit()
+```
+***
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ***
 
 ### Differences Between Python2 & Python3
