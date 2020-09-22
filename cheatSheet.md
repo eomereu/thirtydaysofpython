@@ -1,6 +1,6 @@
 ## The Holy Python Cheat Sheet
 Contents:
-1. [Thirty Days Of Python - Udemy Course Notes](https://github.com/eomereu/thirtydaysofpython/blob/master/cheatSheet.md#thirty-days-of-python-udemy-course-notes)  
+1. [Thirty Days Of Python - Udemy Course Notes](https://github.com/eomereu/thirtydaysofpython/blob/master/cheatSheet.md#thirty-days-of-python---udemy-course-notes)  
    - Main Stuff
    1. [Lists](https://github.com/eomereu/thirtydaysofpython/blob/master/cheatSheet.md#lists)
    1. [Dictionaries](https://github.com/eomereu/thirtydaysofpython/blob/master/cheatSheet.md#dictionaries)
@@ -640,6 +640,7 @@ port = 587
 To connect to the service and create a connection object:
 ```python
 import smptlib
+
 SMTP = smtplib.SMTP(host, port)
 ```
 >Here we can also import the things one by one like `from smtplib import SMTP, SMTPAuthenticationError` but in that case leading *smtplib.* should not be added. Then it's simply like `SMTP = SMTP(host,port)` *(referring the line above)*
@@ -657,10 +658,46 @@ To login:
 SMTP.login(username, password)
 ```
 >If it gives `SMTPAuthenticationError` despite all credentials are correct then (on gmail) we need to enable **Less secure app access**!  
-
-To send message:
+To be able to send more advanced *(with Subject, From, Attachment, HMTL etc. included)* we must include and do the following:
 ```python
-SMTP.sendmail(from_email, to_list, message)
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
+
+message = MIMEMultipart("alternative")
+```
+To specify Subject:
+> PS: When we don't specify the last line following (we don't here yet due to the fact that we want to send to a set of users - but I guess this issue will be solved further in course) it leaves the 'to' section empty!
+```python
+message["Subject"] = "Lernen Sie neue Wörter mit uns!"
+message["From"] = "deutschlehrer@at.com"
+#message["To"] = somemail@mail.com
+```
+Handling *plain text* and *HTML*:
+```python
+plain_text = "Testen der Nachricht"
+html_text = """\
+<html>
+  <head></head>
+  <body>
+    <p>Hey!<br>
+      Testen dieser Emailnachricht. Hergestellt von <a href="https://www.google.com">DeutschLehrer-Team</a>.
+    </p>
+  </body>
+</html>
+"""
+# getting formatted the texts:
+part_1 = MIMEText(plain_text, "plain")
+part_2 = MIMEText(html_text, "html")
+# adding formatted texts to the message to be sent
+message.attach(part_1)
+message.attach(part_2)
+# and finally sending the created message:
+SMTP.sendmail(from_email, to_list, message.as_string())
+
+```
+If just a plain text is going to be sent then we can simply do:
+```python
+SMTP.sendmail(from_email, to_list, "Pure plain text")
 ```
 To quit the connection:
 ```python
@@ -764,7 +801,7 @@ income = (gross_wages
 ***
 
 ### Imports
-Imports should usually be on separate lines:
+Imports should usually be on separate lines. It is always a best practice to order imports alphabetically!
 ```python
 import os
 import sys
