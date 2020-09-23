@@ -46,7 +46,6 @@ try:
     # and finally sending the created message:
     SMTP.sendmail(from_email, to_list, message.as_string())
     # quitting the connection
-    SMTP.quit()
-    
+    SMTP.quit()  
 except smtplib.SMTPException:
     print("Ein Fehler ist aufgetreten!")

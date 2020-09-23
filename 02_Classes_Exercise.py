@@ -28,7 +28,7 @@ Team CFE"""
 
     def make_messages(self):
         if len(self.user_details) > 0:
-            for detail in self.user_details:
+            for detail in self.get_user_details:
                 message = self.base_message.format(
                     name = detail["name"].capitalize(),
                     amount = "%.2f" %(detail["amount"]),
