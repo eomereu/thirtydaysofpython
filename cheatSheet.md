@@ -438,6 +438,18 @@ Other than working with variable names we can also work with their positionings,
 >>> text
 'This is an argument. An argument is an important thing.'
 ```
+ - `str.format(**dict)`  
+While formating a string with use of a dictionary, we need to use double stars `**` notation:
+```python
+message = "Hello {name}! It's {air_condition} today."
+context = {
+    "name": "David",
+    "air_condition": "heavily raining"
+}
+>>> message.format(**context)
+"Hello David! It's heavily raining today."
+```
+> It's obliged to provide values of every placeholder, within the string, in the dictionary in order not to get a `KeyError`!
 - `str %("value")`  
 This method is more practical than the format method,
 ```python
@@ -623,6 +635,32 @@ except:
     # Runs when any other error occurd besides AnySpecificError and AnyOhterSpecificError
     say_that_an_error_occured()
 ```
+In example:
+```python
+>>> def this_fails():
+...     x = 1/0
+...
+>>> try:
+...     this_fails()
+... except ZeroDivisionError as err:
+...     print('Handling run-time error:', err)
+...
+Handling run-time error: division by zero
+```
+To define and raise our own exception:
+```python
+if not the_case:
+    raise Exception("Requirements not met!")
+else:
+    begin_process()
+```
+To intendly raise a built-in exception:
+```python
+>>> raise NameError('HiThere')
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: HiThere
+```
 ***
 
 ### Python CSV and E-mail
@@ -705,7 +743,31 @@ SMTP.quit()
 ```
 ***
 
+### Using External Template Files
+- Following library makes Python & Win/Linux work very well together:
+```python
+import os
+```
+- Mac/Linux path is like following with `/`:
+```python
+home/Desktop/file.py
+```
+- While Windows path is like `\`:
+```python
+home\Desktop\file.py
+```
+> `open(path).read()` will simply open the specified file and read it but when we takr the path difference above into consideration it will fail when the runner system alters.
 
+> So insted, within the *os library* we have `os.path.join(os.getcwd(), path)` to handle the difference:
+```python
+def get_template_path(path):
+    return os.path.join(os.getcwd(), path)
+
+file_ = "thirtydaysofpython/03_Email/custom.py"
+
+get_template_path(file_)
+```
+At this point if we use an absolute path *(the path starting with `/`)* then it won't combine the paths but will take the absolute path alone, ignoring the cwd *(current working directory)*...
 
 
 
